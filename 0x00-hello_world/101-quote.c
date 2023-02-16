@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
-
+i
 /**
- * main - Entry point
+ * main - prints that piece of art is useful"
+ * - Dora Korpar, 2015-10-19
+ *
  * Return: Always 1
  */
 int main(void)
