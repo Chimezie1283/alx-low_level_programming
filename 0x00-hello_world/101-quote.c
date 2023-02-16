@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-i
+
 /**
  * main - prints that piece of art is useful"
  * - Dora Korpar, 2015-10-19
@@ -9,8 +9,7 @@ i
  */
 int main(void)
 {
-	write(2,
-	"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
+	write(stdout, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
 	59);
 	return (1);
 }
