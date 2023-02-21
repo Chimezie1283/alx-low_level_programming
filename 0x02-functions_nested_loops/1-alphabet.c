@@ -2,12 +2,10 @@
 
 /**
  * print_alphabet - prints alphabet in lowercase
- *
- * Return: Nothing
  */
 void print_alphabet(void)
 {
-	char alph
+	char alph;
 
 	for (alph = 'a'; alph <= 'z'; aplh++)
 	{
