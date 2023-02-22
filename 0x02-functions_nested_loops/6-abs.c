@@ -1,22 +1,15 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - computes the absolute value of an integer
+ * _abs - computes the absolute value of an integer
+ *@c: the integer
  *
- * Return: 0
+ * Return: Absolute value of number or 0
  */
-int main(void)
+int _abs(int c)
 {
-	int u;
+	if (c < 0)
+		c = c * -1;
 
-	u = _abs(-1);
-	printf("%d\n", u);
-	u = _abs(0);
-	printf("%d\n", u);
-	u = _abs(1);
-	printf("%d\n", u);
-	u = _abs(-98);
-	printf("%d\n", u);
 	return (0);
 }
