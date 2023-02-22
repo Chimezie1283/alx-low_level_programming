@@ -17,7 +17,7 @@ void print_times_table(int n)
 			for (b = 0; b <= n; b++)
 			{
 				chi = (a * b);
-				if (j != 0)
+				if (b != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
@@ -45,7 +45,7 @@ void print_times_table(int n)
 			}
 				_putchar('\n');
 			}
-			}
+			
 		}
 	}
 }
