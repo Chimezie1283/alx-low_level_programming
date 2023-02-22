@@ -2,18 +2,17 @@
 
 /**
  * print_last_digit - prints the last digit of a number
- * @u: digit to find the last place of and integer
+ *@u: value of last digit
  *
  * Return: Value of the last digit
  */
 int print_last_digit(int u)
 {
+	u = u % 10;
 
 	if (u < 0)
-	{
-		u = u * -1;
-	}
+		u = -1 * u;
 
-	_putchar((u % 10) + '0');
-	return (u % 10);
+	_putchar('0' + u);
+	return (u);
 }
