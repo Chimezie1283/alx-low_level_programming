@@ -1,2 +1,3 @@
-C - pointers, Arrays and Strings
-0. 98 Battery st.
+C - Pointers, arrays and strings
+#TASKS
+0. Battery st.
