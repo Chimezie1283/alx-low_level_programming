@@ -6,21 +6,20 @@
  *
  * Return: String in reverse
  */
-
 void rev_string(char *s)
 {
 	char back = s[0];
-	int otherwise = 0;
-	int a;
+	int other = 0;
+	int i;
 
-	while (s[otherwise] != '\0')
-	otherwise++;
-	for (a = 0; a < otherwise; a++)
+	while (s[other] != '\0')
+	other++;
+	for (i = 0; i < other; i++)
 	{
-		otherwise--;
+		other--;
 		back = s[i];
-		s[a] = s[otherwise];
-		s[otherwise] = back;
+		s[i] = s[other];
+		s[other] = back;
 	}
 }
 
