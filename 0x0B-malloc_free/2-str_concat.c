@@ -1,45 +1,51 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * string_nconcat - A function that concatenate two strings
- * @s1: First string
- * @s2: String to add to end of s1
- * @n: Amount of s2 to add to s1
+ * str_concat - get ends of input and add together for size
+ * @s1: input one to concat
+ * @s2: input two to concat
  *
- * Return: pointer to new area in memory, NULL if it fails
+ * Return: concat of s1 and s2
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *str_concat(char *s1, char *s2)
 {
-	char *chi, *empty;
-	unsigned int m, men, p;
-	unsigned int size;
+	char *conct;
+	int i, ci;
 
-	men = 0;
-	empty = "";
+
 	if (s1 == NULL)
-		s1 = empty;
+		s1 = "";
+
 	if (s2 == NULL)
-		s2 = empty;
-	while (s1[men] != '\0')
-		men++;
-	size = (men + n) * sizeof(*chi);
-	chi = malloc(size + 1);
-	if (chi == NULL)
+		s2 = "";
+
+
+		i = ci = 0;
+
+	while (s1[i] != '\0')
+		i++;
+
+	while (s2[ci] != '\0')
+		ci++;
+
+	conct = malloc(sizeof(char) * (i + ci + 1));
+
+	if (conct == NULL)
 		return (NULL);
-	m = 0;
-	while (m < size && s1[m] != '\0')
+
+	i = ci = 0;
+
+	while (s1[i] != '\0')
 	{
-		chi[m] = s1[m];
-		m++;
+		conct[i] = s1[i];
+		i++;
 	}
-	p = 0;
-	while (m < size && s2[p] != '\0')
+	while (s2[ci] != '\0')
 	{
-		chi[m] = s2[p];
-		m++;
-		p++;
+		conct[i] = s2[ci];
+		i++, ci++;
 	}
-	chi[m] = '\0';
-	return (chi);
+	conct[i] = '\0';
+	return (conct);
 }
