@@ -5,7 +5,7 @@
  * wrdcnt - A function that counts the number of words in a string
  * @s: string to count
  *
- * Return: int of number of words
+ * Return: n  number of words
  */
 int wrdcnt(char *s)
 {
