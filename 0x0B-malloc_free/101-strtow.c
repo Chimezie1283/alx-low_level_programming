@@ -63,22 +63,18 @@ char **strtow(char *str)
 
 			q[wc] = (char *)malloc(j * sizeof(char));
 			j--;
-
 			if (q[wc] == NULL)
 			{
 				for (k = 0; k < wc; k++)
 					free(q[k]);
-
 				free(q[n - 1]);
 				free(q);
 				return (NULL);
 			}
 			for (l = 0; l < j; l++)
 				q[wc][l] = str[p + l];
-
 			q[wc][l] = '\0';
 			wc++;
-
 			p += j;
 		}
 		else
