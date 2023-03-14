@@ -53,7 +53,7 @@ char **strtow(char *str)
 
 	p = 0;
 
-	while (str[i])
+	while (str[p])
 	{
 		if (str[p] != ' ' && (p == 0 || str[p - 1] == ' '))
 		{
