@@ -58,7 +58,6 @@ char **strtow(char *str)
 		if (str[p] != ' ' && (p == 0 || str[p - 1] == ' '))
 		{
 			for (j = 1; str[p + j] != ' ' && str[p + j]; j++)
-
 			j++;
 
 			q[wc] = (char *)malloc(j * sizeof(char));
