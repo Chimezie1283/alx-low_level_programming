@@ -52,11 +52,11 @@ char **strtow(char *str)
 	n = wrdcnt(str);
 	if (n == 1)
 		return (NULL);
-<<<<<<< HEAD
+
 	q = (char **)malloc(n * sizeof(char *));
-=======
-	w = (char **)malloc(n * sizeof(char *));
->>>>>>> cf90726d17f4997c5d5e2f4a51c486193a848d35
+
+	q = (char **)malloc(n * sizeof(char *));
+
 	if (q == NULL)
 		return (NULL);
 	q[n - 1] = NULL;
