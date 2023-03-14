@@ -2,10 +2,6 @@
 #include <stdlib.h>
 
 /**
- * wrdcnt - A function that counts the number of words in a string
- * @s: string to count
- *
- * Return: int n of number of words
  * wrdcnt - counts the number of words in a string
  * @s: string to count
  *
@@ -13,16 +9,16 @@
  */
 int wrdcnt(char *s)
 {
-	int p, n = 0;
+	int i, n = 0;
 
-	for (p = 0; s[p]; p++)
+	for (i = 0; s[i]; i++)
 	{
-		if (s[p] == ' ')
+		if (s[i] == ' ')
 		{
-			if (s[p + 1] != ' ' && s[p + 1] != '\0')
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
 				n++;
 		}
-		else if (p == 0)
+		else if (i == 0)
 			n++;
 	}
 	n++;
@@ -30,7 +26,6 @@ int wrdcnt(char *s)
 }
 
 /**
- * **strtow - splits a string into words
  * strtow - splits a string into words
  * @str: string to split
  *
@@ -38,44 +33,44 @@ int wrdcnt(char *s)
  */
 char **strtow(char *str)
 {
-	int p, j, k, l, n = 0, wc = 0;
-	char **q;
+	int i, j, k, l, n = 0, wc = 0;
+	char **w;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	n = wrdcnt(str);
 	if (n == 1)
 		return (NULL);
-	q = (char **)malloc(n * sizeof(char *));
-	q = (char **)malloc(n * sizeof(char *));
-	if (q == NULL)
+	w = (char **)malloc(n * sizeof(char *));
+	if (w == NULL)
 		return (NULL);
-	q[n - 1] = NULL;
-	p = 0;
-	while (str[p])
+	w[n - 1] = NULL;
+	i = 0;
+	while (str[i])
 	{
-		if (str[p] != ' ' && (p == 0 || str[p - 1] == ' '))
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-			for (j = 1; str[p + j] != ' ' && str[p + j]; j++)
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+				;
 			j++;
-			q[wc] = (char *)malloc(j * sizeof(char));
+			w[wc] = (char *)malloc(j * sizeof(char));
 			j--;
-			if (q[wc] == NULL)
+			if (w[wc] == NULL)
 			{
 				for (k = 0; k < wc; k++)
-					free(q[k]);
-				free(q[n - 1]);
-				free(q);
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
 				return (NULL);
 			}
 			for (l = 0; l < j; l++)
-				q[wc][l] = str[p + l];
-			q[wc][l] = '\0';
+				w[wc][l] = str[i + l];
+			w[wc][l] = '\0';
 			wc++;
-			p += j;
+			i += j;
 		}
 		else
-			p++;
+			i++;
 	}
-	return (q);
+	return (w);
 }
