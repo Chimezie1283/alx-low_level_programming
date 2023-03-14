@@ -26,7 +26,7 @@ int wrdcnt(char *s)
 }
 
 /**
- * strtow - splits a string into words
+ * strtow - A function that splits a string into words
  * @str: string to split
  *
  * Return: pointer to an array of strings
