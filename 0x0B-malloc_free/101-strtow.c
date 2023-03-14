@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * wrdcnt - Function that counts the number of words in a string
+ * wrdcnt - A function that counts the number of words in a string
  * @s: string to count
  *
- * Return: int of number of words
+ * Return: int n of number of words
  */
 int wrdcnt(char *s)
 {
@@ -26,7 +26,7 @@ int wrdcnt(char *s)
 }
 
 /**
- * strtow - splits a string into words
+ * **strtow - splits a string into words
  * @str: string to split
  *
  * Return: pointer to an array of strings
@@ -64,7 +64,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			for (l = 0; l < j; l++)
-				q[wc][l] = str[i + l];
+				q[wc][l] = str[p + l];
 			q[wc][l] = '\0';
 			wc++;
 			p += j;
