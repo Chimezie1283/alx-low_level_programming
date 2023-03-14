@@ -2,17 +2,14 @@
 #include <stdlib.h>
 
 /**
-<<<<<<< HEAD
  * wrdcnt - A function that counts the number of words in a string
  * @s: string to count
  *
  * Return: int n of number of words
-=======
  * wrdcnt - counts the number of words in a string
  * @s: string to count
  *
  * Return: int of number of words
->>>>>>> cf90726d17f4997c5d5e2f4a51c486193a848d35
  */
 int wrdcnt(char *s)
 {
@@ -33,11 +30,8 @@ int wrdcnt(char *s)
 }
 
 /**
-<<<<<<< HEAD
  * **strtow - splits a string into words
-=======
  * strtow - splits a string into words
->>>>>>> cf90726d17f4997c5d5e2f4a51c486193a848d35
  * @str: string to split
  *
  * Return: pointer to an array of strings
@@ -52,11 +46,8 @@ char **strtow(char *str)
 	n = wrdcnt(str);
 	if (n == 1)
 		return (NULL);
-
 	q = (char **)malloc(n * sizeof(char *));
-
 	q = (char **)malloc(n * sizeof(char *));
-
 	if (q == NULL)
 		return (NULL);
 	q[n - 1] = NULL;
@@ -66,7 +57,6 @@ char **strtow(char *str)
 		if (str[p] != ' ' && (p == 0 || str[p - 1] == ' '))
 		{
 			for (j = 1; str[p + j] != ' ' && str[p + j]; j++)
-				;
 			j++;
 			q[wc] = (char *)malloc(j * sizeof(char));
 			j--;
