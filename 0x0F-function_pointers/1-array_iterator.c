@@ -3,9 +3,11 @@
 
  /**
  * array_iterator - A function that executes a function given as a parameter on each element of an array.
- * @array: array
+ * @*array: array
  * @size: how many elem to print
- * @action: pointer to print in regular or hexadecimal
+ * @*action: pointer to print in regular or hexadecimal
+ *
+ * Return: void
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
