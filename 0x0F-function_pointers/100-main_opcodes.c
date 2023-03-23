@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
- /**
+/**
  * main - A function that prints its own opcodes
  * @argc: number of arguments
  * @argv: array of arguments
