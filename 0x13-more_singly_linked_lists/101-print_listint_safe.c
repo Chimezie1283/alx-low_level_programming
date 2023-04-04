@@ -5,7 +5,8 @@ size_t looped_listint_len(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
 
 /**
- * looped_listint_len - A function that counts the number of unique nodes
+ * looped_listint_len - A function that
+ * counts the number of unique nodes
  * in a looped listint_t linked list.
  * @head: A pointer to the head of the listint_t to check.
  *
@@ -20,37 +21,38 @@ size_t looped_listint_len(const listint_t *head)
 	if (head == NULL || head->next == NULL)
 	return (0);
 
-	goat = head->next;
-	fowl = (head->next)->next;
+		goat = head->next;
+		fowl = (head->next)->next;
 
 	while (fowl)
 	{
-	if (goat == fowl)
+		if (goat == fowl)
 	{
-	goat = head;
+		goat = head;
 	while (goat != fowl)
 	{
-	nodes++;
-	goat = goat->next;
-	fowl = fowl->next;
+		nodes++;
+		goat = goat->next;
+		fowl = fowl->next;
 	}
-	fowl = fowl->next;
+		fowl = fowl->next;
 	while (goat != fowl)
 	{
-	nodes++;
-	goat = goat->next;
+		nodes++;
+		goat = goat->next;
 	}
 	return (nodes);
 	}
-	goat = goat->next;
-	fowl = (fowl->next)->next;
+		goat = goat->next;
+		fowl = (fowl->next)->next;
 	}
 
 	return (0);
 }
 
 /**
- * print_listint_safe - A function that Prints a listint_t list safely.
+ * print_listint_safe - A function that Prints
+ * a listint_t list safely.
  * @head: A pointer to the head of the listint_t list.
  *
  * Return: The number of nodes in the list.
@@ -59,7 +61,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, flex = 0;
 
-	nodes = looped_listint_len(head);
+		nodes = looped_listint_len(head);
 
 	if (nodes == 0)
 	{
