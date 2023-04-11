@@ -10,16 +10,17 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int m, decimal = 0;
-	unsigned long int current;
-	unsigned long int exclusive = n ^ m;
+	unsigned long int difference;
+	int count;
 
-	for (m = 63; m >= 0; m--)
+	difference = n ^ m;
+	count = 0;
+
+	while (difference)
 	{
-		current = exclusive >> i;
-		if (current & 1)
-			decimal++;
+		count++;
+		difference &= (difference - 1);
 	}
 
-	return (decimal);
+	return (count);
 }
