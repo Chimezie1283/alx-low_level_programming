@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *create_buffer(char *file);
+char *create_buffa(char *file);
 void close_file(int td);
 
 /**
@@ -11,7 +11,7 @@ void close_file(int td);
  *
  * Return: A pointer to the newly-allocated buffer.
  */
-char *create_buffer(char *file)
+char *create_buffa(char *file)
 {
 	char *buffa;
 
@@ -33,13 +33,13 @@ char *create_buffer(char *file)
  */
 void close_file(int td)
 {
-	int o;
+	int d;
 
-	o = close(td);
+	d = close(td);
 
-	if (o == -1)
+	if (d == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Cannot closet td %d\n", td);
+		dprintf(STDERR_FILENO, "Error: Cannot close td %d\n", td);
 		exit(100);
 	}
 }
@@ -58,7 +58,7 @@ void close_file(int td)
  */
 int main(int argc, char *argv[])
 {
-	int b4, afta, t, m;
+	int bfor, after, t, m;
 	char *buffa;
 
 	if (argc != 3)
@@ -67,13 +67,13 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buffa = create_buffer(argv[2]);
-	b4 = open(argv[1], O_RDONLY);
-	t = read(b4, buffa, 1024);
-	afta = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	buffa = create_buffa(argv[2]);
+	bfor = open(argv[1], O_RDONLY);
+	t = read(bfor, buffa, 1024);
+	after = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (b4 == -1 || t == -1)
+		if (bfor == -1 || t == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Cannot read from file %s\n", argv[1]);
@@ -81,8 +81,8 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		m = write(afta, buffa, t);
-		if (afta == -1 || m == -1)
+		m = write(after, buffa, t);
+		if (after == -1 || m == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Cannot write to %s\n", argv[2]);
@@ -90,14 +90,14 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		t = read(b4, buffa, 1024);
-		afta = open(argv[2], O_WRONLY | O_APPEND);
+		t = read(bfor, buffa, 1024);
+		after = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (t > 0);
 
 	free(buffa);
-	close_file(b4);
-	close_file(afta);
+	close_file(bfor);
+	close_file(after);
 
 	return (0);
 }
